@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+
+<link rel="stylesheet" href="../dist/tweaker.css" type="text/css" media="screen" charset="utf-8">
+<style type="text/css" media="screen">
+   body {
+      padding: 0;
+      margin: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   }
+</style>
+
+<div id="tweaker">
+   <div data-title="CSS">
+      <label for="backgroundColour">Change the page's background colour: </label><input type="text" id="backgroundColour" />
+   </div>
+   <div data-title="Tweaker">
+      <label for="changeAlignment">Change the alignment of tweaker: </label><select id="changeAlignment"></select>
+   </div>
+</div>
+
+<script src="../dist/tweaker.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+   (function() {
+
+      var tweaker = new Tweaker(document.querySelector('#tweaker')),
+          changeAlignmentElem = document.querySelector('#changeAlignment'),
+          backgroundColourElem = document.querySelector('#backgroundColour');
+
+      Object.keys(Tweaker.ALIGN).forEach(function(alignment) {
+
+         var option = document.createElement('option');
+
+         option.innerText = alignment;
+         option.value = Tweaker.ALIGN[alignment];
+
+         changeAlignmentElem.appendChild(option);
+
+      });
+
+      changeAlignmentElem.addEventListener('change', function(evt) {
+         tweaker.changeAlignment(changeAlignmentElem.children[changeAlignmentElem.selectedIndex].value);
+      });
+
+      backgroundColourElem.addEventListener('change', function(evt) {
+         document.body.style.backgroundColor = backgroundColourElem.value;
+      });
+
+      backgroundColourElem.value = document.body.style.backgroundColor = "#BADA55";
+
+   }());
+</script>
