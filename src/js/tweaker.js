@@ -68,6 +68,24 @@
 
    };
 
+   Tweaker.prototype.pin = function() {
+
+      if (this._pinned) {
+         document.body.classList.remove('tweaker-pinned');
+         this._pinLink.classList.remove('selected');
+      } else {
+         document.body.classList.add('tweaker-pinned');
+         this._pinLink.classList.add('selected');
+
+         if (!this._open) {
+            this.show();
+         }
+      }
+
+      this._pinned = !this._pinned;
+
+   };
+
    Tweaker.prototype._buildDom = function() {
 
       var panelsElement = document.createElement('ul'),
@@ -120,19 +138,7 @@
 
       evt.preventDefault();
 
-      if (this._pinned) {
-         document.body.classList.remove('tweaker-pinned');
-         this._pinLink.classList.remove('selected');
-      } else {
-         document.body.classList.add('tweaker-pinned');
-         this._pinLink.classList.add('selected');
-
-         if (!this._open) {
-            this.show();
-         }
-      }
-
-      this._pinned = !this._pinned;
+      this.pin();
 
    };
 
