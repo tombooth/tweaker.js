@@ -103,9 +103,10 @@
       var linkContainer = document.createElement('li'),
           link = document.createElement('a');
 
+      linkContainer.className = 'link-item';
+
       link.href = '#';
       link.innerText = text;
-      link.className = 'link-item';
       link.addEventListener('click', clickHandler);
 
       linkContainer.appendChild(link);
