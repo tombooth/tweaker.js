@@ -52,7 +52,8 @@
    border-bottom: 1px solid black;
 }
 
-.panels, .tools {
+.tweaker .panels, 
+.tweaker .tools {
    padding: 0;
    margin: 0;
    list-style: none;
@@ -110,7 +111,7 @@
    bottom: 0px;
 }
 
-.tools {
+.tweaker .tools {
    position: absolute;
 }
 
@@ -140,9 +141,10 @@
    bottom: 0px;
 }
 
-.panel {
+.tweaker .panel {
    position: absolute;
    padding: 10px;
+   overflow: auto;
 }
 
 .tweaker.right .panel,
@@ -181,7 +183,7 @@
    border-bottom: 1px solid #eee;
 }
 
-.panel.hidden {
+.tweaker .panel.hidden {
    display: none;
 }
 
