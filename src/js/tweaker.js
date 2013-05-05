@@ -105,6 +105,7 @@
 
       link.href = '#';
       link.innerText = text;
+      link.className = 'link-item';
       link.addEventListener('click', clickHandler);
 
       linkContainer.appendChild(link);

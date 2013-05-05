@@ -185,17 +185,17 @@
    display: none;
 }
 
-.tweaker li {
+.tweaker .link-item {
    display: inline-block;
    margin-right: 8px;
 }
 
-.tweaker li a {
+.tweaker .link-item a {
    color: black;
 }
 
-.tweaker li a:hover,
-.tweaker li a.selected {
+.tweaker .link-item a:hover,
+.tweaker .link-item a.selected {
    color: red;
 }
 
