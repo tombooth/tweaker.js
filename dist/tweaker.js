@@ -4,7 +4,7 @@
 
    function Tweaker(element, alignment) {
       this.panels = [].slice.call(element.querySelectorAll('div'))
-                      .filter(function(elem) { return element.parentNode === element; })
+                      .filter(function(elem) { return elem.parentNode === element; })
                       .map(function(panelElem) { return { element: panelElem }; });
 
       this._element = element;
